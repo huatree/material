@@ -1,4 +1,5 @@
 commitlint
+conventionalcommits
 pinia
 rushstack
 stylelint

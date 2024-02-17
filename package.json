@@ -16,7 +16,9 @@
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
     "lint": "run-p lint:stage type-check spellcheck",
     "prepare": "husky install",
-    "lint:stage": "lint-staged"
+    "lint:stage": "lint-staged",
+    "commit": "git-cz",
+    "commitlint": "commitlint --edit"
   },
   "lint-staged": {
     "*.{html,vue,css,sass,scss,ts}": "prettier --write",
