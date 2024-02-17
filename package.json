@@ -14,7 +14,7 @@
     "format": "prettier --write src/",
     "lint:style": "stylelint **/*.{vue,css}",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
-    "lint": "run-p lint:js type-check lint:style spellcheck",
+    "lint": "run-p lint:stage type-check spellcheck",
     "prepare": "husky install",
     "lint:stage": "lint-staged"
   },
@@ -65,6 +65,8 @@
     "commitizen": "4.3.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "cz-git": "1.7.0"
+    "cz-git": "1.7.0",
+    "zx": "7.2.3",
+    "tsno": "2.0.0"
   }
 }
