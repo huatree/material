@@ -1,3 +1,4 @@
+commitlint
 pinia
 rushstack
 stylelint

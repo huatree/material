@@ -14,7 +14,19 @@
     "format": "prettier --write src/",
     "lint:style": "stylelint **/*.{vue,css}",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
-    "lint": "run-p lint:js type-check lint:style spellcheck"
+    "lint": "run-p lint:js type-check lint:style spellcheck",
+    "prepare": "husky install",
+    "lint:stage": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{html,vue,css,sass,scss,ts}": "prettier --write",
+    "*.{vue,ts}": "eslint --fix",
+    "*.{vue,css,sass,scss}": "stylelint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -46,6 +58,13 @@
     "stylelint-config-prettier": "9.0.5",
     "stylelint-config-html": "1.1.0",
     "stylelint-config-vue": "1.0.0",
-    "cspell": "6.31.2"
+    "cspell": "6.31.2",
+    "@commitlint/cli": "17.6.7",
+    "@commitlint/config-conventional": "17.6.7",
+    "@commitlint/cz-commitlint": "17.6.7",
+    "commitizen": "4.3.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.3",
+    "cz-git": "1.7.0"
   }
 }
