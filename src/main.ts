@@ -5,10 +5,14 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import { setup } from './setup'
+// import '@/plugins/Calculator'
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
+setup(app)
 
 app.mount('#app')

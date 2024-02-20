@@ -1,3 +1,4 @@
+behaviour
 commitlint
 conventionalcommits
 nightwatch
@@ -5,5 +6,7 @@ optimizelegibility
 pinia
 rushstack
 stylelint
+tiptap
 tsno
+vuedraggable
 vuejs
