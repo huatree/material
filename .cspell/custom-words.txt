@@ -1,5 +1,7 @@
 commitlint
 conventionalcommits
+nightwatch
+optimizelegibility
 pinia
 rushstack
 stylelint
