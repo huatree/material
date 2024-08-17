@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AppView from '@/views/AppView.vue'
+import AppView from '../views/AppView.vue'
 import { h } from 'vue'
 
 const router = createRouter({
@@ -13,7 +13,17 @@ const router = createRouter({
         {
           path: 'dataSource',
           name: 'dataSource',
-          component: () => import('../views/DataSourceView.vue')
+          component: () => import('../views/DataSourceView.vue'),
+          children: [
+            {
+              path: ':id',
+              component: () => import('../views/DataSourceContent/DataSourceContent.vue')
+            },
+            {
+              path: '',
+              redirect: '/app/dataSource/1'
+            }
+          ]
         },
         {
           path: 'layout',

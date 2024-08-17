@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useEnvStore, useTime } from '@/stores/debug'
+import { useEnvStore } from '@/stores/debug'
 import { Data, LayoutThree, Lightning, Share, Bug } from '@icon-park/vue-next'
 import { computed, defineComponent, h } from 'vue'
 import { useRoute } from 'vue-router'
@@ -35,12 +35,10 @@ defineProps<{
 // 千万不要这样！
 // const { debug, toggle } = useEnvStore()
 const envStore = useEnvStore()
-const { time } = useTime({ silent: false })
 
 const route = useRoute()
-console.log('🚀 ~ file: AppNavigator.vue:35 ~ route:', JSON.parse(JSON.stringify(route)))
 
-const activeLink = computed(() => route.name)
+const activeLink = computed(() => route.path)
 
 // 等价于 computed
 // const activeLink = ref(route.path.slice(1))
@@ -54,8 +52,8 @@ const activeLink = computed(() => route.name)
 
 const Icon = defineComponent({
   setup(props) {
-    // const { type } = props，解构写法会丢失响应式连接
-    // https://cn.vuejs.org/guide/essentials/reactivity-fundamentals.html#reactive
+    // 千万不能这样子写！！！
+    // const { type } = props
     switch (props.type) {
       case 'dataSource':
         return () => h(Data, { size: 16 })
@@ -85,15 +83,15 @@ const Icon = defineComponent({
           src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/11.3.0/2/svg/1f469-200d-1f692.svg"
         />
       </div>
-      <h1 class="app-name">Material {{ time }}</h1>
+      <h1 class="app-name">material</h1>
     </div>
     <div class="app-navigator-link-wrapper">
-      <RouterLink
+      <router-link
         class="app-navigator-link-item"
         v-for="item in linkItems"
         :key="item.value"
-        :style="activeLink === item.value && { background: item.bg }"
-        :to="item.value"
+        :style="activeLink.includes(item.value) && { background: item.bg }"
+        :to="`/app/${item.value}`"
       >
         <!-- defineComponent + h 代替条件渲染 -->
         <!-- <div v-if="item.value === 'dataSource'"><Data /></div>
@@ -102,19 +100,19 @@ const Icon = defineComponent({
         <div
           :style="{
             lineHeight: 0.7,
-            color: activeLink === item.value ? item.color : 'var(--color-gray-700)'
+            color: activeLink.includes(item.value) ? item.color : 'var(--color-gray-700)'
           }"
         >
-          <Icon :type="item.value" :active="activeLink === item.value" />
+          <Icon :type="item.value" :active="activeLink.includes(item.value)" />
         </div>
         <span class="item-title">
           {{ item.label }}
         </span>
         <div
           class="item-border"
-          :style="activeLink === item.value ? { background: item.borderColor } : {}"
+          :style="activeLink.includes(item.value) ? { background: item.borderColor } : {}"
         ></div>
-      </RouterLink>
+      </router-link>
     </div>
     <div class="app-setting-wrapper">
       <div class="common-btn debug-btn" :class="{ debug: envStore.debug }" @click="envStore.toggle">

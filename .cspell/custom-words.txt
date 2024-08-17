@@ -1,6 +1,7 @@
 behaviour
 commitlint
 conventionalcommits
+glideapps
 nightwatch
 optimizelegibility
 pinia
@@ -8,5 +9,6 @@ rushstack
 stylelint
 tiptap
 tsno
+veaury
 vuedraggable
 vuejs
