@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import type { PreviewType } from './type'
 import PreviewModeSwitcher from './PreviewModeSwitcher.vue'
-import BlockRenderer from '@/blocks/BlockRenderer.vue'
+import BlocksRenderer from '@/blocks/BlocksRenderer.vue'
 import { ref } from 'vue'
 import { useFullscreen } from '@vueuse/core'
-
 const props = defineProps<{
   previewMode?: PreviewType
 }>()
+
+const runner = ref<HTMLElement | null>(null)
+
+const { toggle } = useFullscreen(runner)
 
 const emit = defineEmits<{
   'preview-mode-change': [mode: PreviewType]
 }>()
 
-const greet = (mode: PreviewType) => {
+function greet(mode: PreviewType) {
   emit('preview-mode-change', mode)
 }
-
-const runner = ref<HTMLElement | null>(null)
-const { toggle } = useFullscreen(runner)
 </script>
 
 <template>
@@ -26,6 +26,7 @@ const { toggle } = useFullscreen(runner)
     <div class="layout-runner-navigator">
       <div></div>
       <div class="address-wrapper">https://helloword.com/sdfsfsdf/sggwefwfsdfsdfsdfsdfsf</div>
+
       <PreviewModeSwitcher
         :preview-mode="props.previewMode"
         @preview-mode-change="greet"
@@ -38,7 +39,7 @@ const { toggle } = useFullscreen(runner)
         <div class="layout-runner-content-title">Material</div>
       </div>
       <div class="layout-runner-content">
-        <BlockRenderer />
+        <BlocksRenderer />
       </div>
     </div>
   </div>
@@ -122,6 +123,6 @@ const { toggle } = useFullscreen(runner)
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 90px 0;
+  padding: 0 90px;
 }
 </style>
