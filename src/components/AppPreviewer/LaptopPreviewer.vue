@@ -2,25 +2,35 @@
 import type { PreviewType } from './type'
 import PreviewModeSwitcher from './PreviewModeSwitcher.vue'
 import BlockRenderer from '@/blocks/BlockRenderer.vue'
+import { ref } from 'vue'
+import { useFullscreen } from '@vueuse/core'
+
 const props = defineProps<{
   previewMode?: PreviewType
 }>()
+
 const emit = defineEmits<{
   'preview-mode-change': [mode: PreviewType]
 }>()
 
-function greet(mode: PreviewType) {
+const greet = (mode: PreviewType) => {
   emit('preview-mode-change', mode)
 }
+
+const runner = ref<HTMLElement | null>(null)
+const { toggle } = useFullscreen(runner)
 </script>
 
 <template>
-  <div class="layout-runner">
+  <div class="layout-runner" ref="runner">
     <div class="layout-runner-navigator">
       <div></div>
       <div class="address-wrapper">https://helloword.com/sdfsfsdf/sggwefwfsdfsdfsdfsdfsf</div>
-
-      <PreviewModeSwitcher :preview-mode="props.previewMode" @preview-mode-change="greet" />
+      <PreviewModeSwitcher
+        :preview-mode="props.previewMode"
+        @preview-mode-change="greet"
+        @full-screen="toggle"
+      />
     </div>
     <div class="layout-runner-content-wrapper tiny-scrollbar">
       <div class="layout-runner-content-header">
