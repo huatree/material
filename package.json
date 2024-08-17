@@ -14,10 +14,11 @@
     "format": "prettier --write src/",
     "lint:style": "stylelint **/*.{vue,css}",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
-    "lint": "run-p lint:stage type-check spellcheck",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prepare": "husky install",
     "lint:stage": "lint-staged",
     "commit": "git-cz",
+    "add-commit": "git add . && pnpm commit",
     "commitlint": "commitlint --edit"
   },
   "lint-staged": {
@@ -43,6 +44,7 @@
     "echarts": "5.4.3",
     "pinia": "^2.1.7",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "smooth-dnd": "0.12.1",
     "veaury": "2.3.12",
     "vee-validate": "4.10.7",

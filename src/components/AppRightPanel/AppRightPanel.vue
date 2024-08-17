@@ -4,6 +4,7 @@ import { blocksBaseMeta } from '@/constants/blocksBaseMeta'
 import { useAppEditorStore } from '@/stores/appEditor'
 import { computed } from 'vue'
 import QuoteSetting from './QuoteSetting.vue'
+import type { BlockInfo } from '@/types/block'
 
 const appEditorStore = useAppEditorStore()
 
@@ -29,9 +30,10 @@ const currentBlockInfo = computed(() => {
       <div class="app-right-panel-content">
         <!-- 策略模式渲染？？？ 动态组件-->
         <!-- <component :is="" /> -->
-        <QuoteSetting
+        <component
+          :is="currentBlockInfo.type === 'quote' && QuoteSetting"
           :blockInfo="currentBlockInfo"
-          @change="(val) => appEditorStore.updateBlock(currentBlockInfo?.id || '', val)"
+          @change="(block: BlockInfo) => appEditorStore.updateBlock(block.id, block)"
         />
         <!-- <div>
           {{ currentBlockInfo.type }}

@@ -13,13 +13,12 @@ export interface BaseBlockInfo {
 
 export interface HeroTitleBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
+    content: string
   }
 }
 
 export interface ViewBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
     fields: {
       id: string
       type: string
@@ -34,13 +33,12 @@ export interface ViewBlockInfo extends BaseBlockInfo {
 
 export interface QuoteBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
+    content: string
   }
 }
 
 export interface ImageBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
     url: string
   }
 }
@@ -48,14 +46,12 @@ export interface ImageBlockInfo extends BaseBlockInfo {
 // external
 export interface ButtonBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
     text: string
   }
 }
 
 export interface FormBlockInfo extends BaseBlockInfo {
   props: {
-    content?: string
     fields: {
       type: string
       label: string

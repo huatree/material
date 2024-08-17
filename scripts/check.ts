@@ -5,18 +5,12 @@ import { $ } from 'zx'
 import { printObject } from './utils'
 
 await $`pnpm spellcheck`.catch((out: ProcessOutput) => {
-  console.log(out)
-
+  printObject(out)
   throw new Error(out.stdout)
 })
 
-// await Promise.all([$`pnpm type-check`, $`pnpm lint`]).catch((out: ProcessOutput) => {
-//   printObject(out)
-//   throw new Error(out.stdout)
-// })
-
 // check type and stage
-await Promise.all([$`pnpm type-check`, $`pnpm lint:stage`]).catch((out: ProcessOutput) => {
+await Promise.all([$`pnpm type-check`, $`pnpm lint`]).catch((out: ProcessOutput) => {
   printObject(out)
   throw new Error(out.stdout)
 })

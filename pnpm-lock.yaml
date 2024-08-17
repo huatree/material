@@ -39,6 +39,7 @@ specifiers:
   postcss-html: ^1.0.0
   prettier: ^3.0.3
   react: 18.2.0
+  react-dom: 18.2.0
   smooth-dnd: 0.12.1
   stylelint: 15.10.2
   stylelint-config-html: 1.1.0
@@ -70,6 +71,7 @@ dependencies:
   echarts: 5.4.3
   pinia: 2.1.7_4kz7whipk5c23xfbqgzv75whe4
   react: 18.2.0
+  react-dom: 18.2.0_react@18.2.0
   smooth-dnd: 0.12.1
   veaury: 2.3.12_biqbaboplfbrettd7655fr4n2y
   vee-validate: 4.10.7_vue@3.4.21
