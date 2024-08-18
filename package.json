@@ -16,9 +16,10 @@
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"src/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md|vue)\"",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prepare": "husky install",
+    "lint:import": "eslint --fix .",
     "lint:stage": "lint-staged",
     "commit": "git-cz",
-    "add-commit": "git add . && pnpm commit",
+    "add-commit": "pnpm lint:import && git add . && pnpm commit",
     "commitlint": "commitlint --edit"
   },
   "lint-staged": {
