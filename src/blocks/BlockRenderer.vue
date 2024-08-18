@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { Drag, Delete } from '@icon-park/vue-next'
-import { useEnvStore } from '@/stores/debug'
-import { useAppEditorStore } from '@/stores/appEditor'
-import { smoothDnD, dropHandlers } from 'smooth-dnd'
+import { Delete,Drag } from '@icon-park/vue-next'
 import { storeToRefs } from 'pinia'
+import { dropHandlers,smoothDnD } from 'smooth-dnd'
+import { ref } from 'vue'
+
+import { useAppEditorStore } from '@/stores/appEditor'
+import { useEnvStore } from '@/stores/debug'
 import type { BlockInfo } from '@/types/block'
 // import { useClickOutside } from '@/hooks/useClickOutside'
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { applyPureReactInVue } from 'veaury'
+
 // @ts-ignore
 import ReactDataSource from './ReactApp/ReactDataSource'
 const RDataSource = applyPureReactInVue(ReactDataSource)

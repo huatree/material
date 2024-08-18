@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref, toRefs, watch } from 'vue'
+
 import type { SegmentedControlProps } from './types'
 
 const props = defineProps<SegmentedControlProps>()

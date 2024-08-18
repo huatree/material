@@ -1,5 +1,5 @@
-import { ref, type Ref, onMounted, onBeforeMount } from 'vue'
 import { defineStore } from 'pinia'
+import { onBeforeMount,onMounted, type Ref, ref } from 'vue'
 
 export const useEnvStore = defineStore('env', () => {
   const debug = ref(true)

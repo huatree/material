@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { blocks } from '@/mocks/blocks'
-import { blocksBaseMeta } from '@/constants/blocksBaseMeta'
-import { useAppEditorStore } from '@/stores/appEditor'
 import { computed } from 'vue'
-import QuoteSetting from './QuoteSetting.vue'
-import ChartSetting from './ChartSetting.vue'
+
+import { blocksBaseMeta } from '@/constants/blocksBaseMeta'
+import { blocks } from '@/mocks/blocks'
+import { useAppEditorStore } from '@/stores/appEditor'
 import type { BlockInfo } from '@/types/block'
+
+import ChartSetting from './ChartSetting.vue'
+import QuoteSetting from './QuoteSetting.vue'
 
 const appEditorStore = useAppEditorStore()
 

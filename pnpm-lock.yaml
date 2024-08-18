@@ -31,6 +31,7 @@ specifiers:
   d3: 7.8.5
   echarts: 5.4.3
   eslint: ^8.49.0
+  eslint-plugin-simple-import-sort: 10.0.0
   eslint-plugin-vue: ^9.17.0
   husky: 8.0.3
   inquirer: ^8.0.0
@@ -104,6 +105,7 @@ devDependencies:
   cspell: 6.31.2
   cz-git: 1.7.0
   eslint: 8.57.0
+  eslint-plugin-simple-import-sort: 10.0.0_eslint@8.57.0
   eslint-plugin-vue: 9.24.1_eslint@8.57.0
   husky: 8.0.3
   inquirer: 8.2.5
@@ -4132,6 +4134,14 @@ packages:
       prettier: 3.2.5
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
+    dev: true
+
+  /eslint-plugin-simple-import-sort/10.0.0_eslint@8.57.0:
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+    dependencies:
+      eslint: 8.57.0
     dev: true
 
   /eslint-plugin-vue/9.24.1_eslint@8.57.0:
