@@ -23,20 +23,28 @@ const content = defineInputBinds('content')
 watch([values], ([newValues]) => {
   emit('change', { ...props.blockInfo, props: { ...props.blockInfo.props, ...newValues } })
 })
-
 </script>
 
 <template>
-  <div>
-    {{ props.blockInfo.type }}
+  <div class="quote-setting">
+    <div>
+      {{ props.blockInfo.type }}
+    </div>
+    <input class="content-input" v-bind="content" />
+    <input v-for="field in fields" :key="field.key" class="content-input" v-model="field.value" />
+    <button class="add-button" @click="push(new Date().toLocaleTimeString())">添加</button>
   </div>
-  <input class="content-input" v-bind="content" />
-  <input v-for="field in fields" :key="field.key" class="content-input" v-model="field.value" />
-  <button @click="push(new Date().toLocaleTimeString())">添加</button>
-
 </template>
 
 <style scoped>
+.quote-setting {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+  font-size: var(--font-size-large);
+  border-radius: 8px;
+}
 .content-input {
   width: 100%;
   /* 在做组件库的时候，input 是有一个 size 属性，sm、md、lg */
@@ -47,5 +55,13 @@ watch([values], ([newValues]) => {
   border-radius: 8px;
   outline-style: none;
   color: var(--color-gray-800);
+}
+.add-button {
+  margin-top: 6px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  cursor: pointer;
 }
 </style>

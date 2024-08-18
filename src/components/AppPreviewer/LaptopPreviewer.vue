@@ -125,6 +125,6 @@ function greet(mode: PreviewType) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 90px;
+  padding: 24px 90px 32px;
 }
 </style>

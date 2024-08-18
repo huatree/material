@@ -209,7 +209,6 @@ const option = ref({
 
 <template>
  <div>
-  <div>12324</div>
   <v-chart class="chart" :option="option" autoresize />
  </div>
 </template>
