@@ -5,10 +5,11 @@ import {
   LegendComponent,
   TitleComponent,
   ToolboxComponent,
-  TooltipComponent} from 'echarts/components'
-import { graphic,use } from 'echarts/core'
+  TooltipComponent
+} from 'echarts/components'
+import { graphic, use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
-import { provide,ref } from 'vue'
+import { onBeforeUnmount, onMounted, provide, ref } from 'vue'
 import VChart, { THEME_KEY } from 'vue-echarts'
 
 use([
@@ -205,12 +206,27 @@ const option = ref({
     }
   ]
 })
+
+const chartInstance = ref<InstanceType<typeof VChart>>()
+
+const resizeHandler = () => {
+  chartInstance.value?.resize()
+}
+
+onMounted(() => {
+  console.log("🚀 ~ onMounted ~ onMounted:", onMounted)
+  window.addEventListener('resize', resizeHandler)
+})
+
+onBeforeUnmount(() => {
+  console.log("🚀 ~ onBeforeUnmount ~ onBeforeUnmount:", onBeforeUnmount)
+  window.removeEventListener('resize', resizeHandler)
+  chartInstance.value?.dispose()
+})
 </script>
 
 <template>
- <div>
-  <v-chart class="chart" :option="option" autoresize />
- </div>
+  <v-chart class="chart" :option="option" ref="chartInstance" />
 </template>
 
 <style scoped>
