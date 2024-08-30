@@ -38,6 +38,7 @@ specifiers:
   inquirer: ^8.0.0
   jsdom: ^24.0.0
   lint-staged: 13.2.3
+  nanoid: 5.0.4
   npm-run-all2: ^6.1.1
   pinia: ^2.1.7
   postcss-html: ^1.0.0
@@ -78,6 +79,7 @@ dependencies:
   copy-text-to-clipboard: 3.2.0
   d3: 7.8.5
   echarts: 5.4.3
+  nanoid: 5.0.4
   pinia: 2.1.7_4kz7whipk5c23xfbqgzv75whe4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -5640,6 +5642,12 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanoid/5.0.4:
+    resolution: {integrity: sha512-vAjmBf13gsmhXSgBrtIclinISzFFy22WwCYoyilZlsrRXNIHSwgFQ1bEdjRwMT3aoadeIF6HMuDRlOxzfXV8ig==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
