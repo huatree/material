@@ -2,7 +2,7 @@
 import { applyPureReactInVue } from 'veaury'
 
 // @ts-ignore
-import ReactDataSource from './ReactApp/ReactDataSource'
+import ReactDataSource from './react_app/ReactDataSource'
 const RDataSource = applyPureReactInVue(ReactDataSource)
 </script>
 
