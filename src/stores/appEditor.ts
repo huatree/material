@@ -17,12 +17,12 @@ export const useAppEditorStore = defineStore('appEditor', () => {
   }
 
   function updateBlock(id: string, newBlock: BlockInfo) {
-    blocks.value = blocks.value.map((block) => {
+    for (const block of blocks.value) {
       if (block.id === id) {
-        return newBlock
+        Reflect.set(block, 'props', newBlock.props)
+        break
       }
-      return block
-    })
+    }
   }
 
   return { currentBlockId, blocks, selectBlock, updateBlocks, updateBlock }

@@ -31,3 +31,4 @@ coverage
 
 .*cache
 /scripts/*.tsno.mjs
+bundle-analysis.html
