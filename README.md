@@ -1,6 +1,6 @@
 # material
 
-Vue3 低代码可视化平台
+Vue3 无代码可视化平台
 
 ## :star: 特性
 
@@ -87,7 +87,7 @@ mobile 渲染器
   - 重做（undo/redo）：使用队列，指针移动
   - 预览：render(dsl: {type, key,props{},animate{},actions:{},attrs:{},children[]})
 - 中间层：权限控制、数据操作（转换），暴露部分api
-  这块比较考验大家对于复杂表单的设计实现
+  这块比较考验同学对于复杂表单的设计实现
 
 #### 渲染器与出码
 
