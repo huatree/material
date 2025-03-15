@@ -32,3 +32,4 @@ coverage
 .*cache
 /scripts/*.tsno.mjs
 bundle-analysis.html
+pnpm-lock.yaml
