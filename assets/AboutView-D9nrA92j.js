@@ -1,1 +1,0 @@
-import{_ as e}from"./index-D6ALJZQz.js";import{g as t,o as s,h as r}from"./vue-common-lib-CqEbCgjL.js";import"./react-common-lib-D5WSzemP.js";const a={},n={class:"about"};function c(i,o){return s(),t("div",n,o[0]||(o[0]=[r("h1",null,"This is an about page",-1)]))}const m=e(a,[["render",c]]);export{m as default};
